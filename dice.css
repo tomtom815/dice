@@ -5,6 +5,7 @@ body {
     width: 75vw;
     justify-content: space-evenly;
     margin: auto;
+    background: #7cf8f4;
 }
 .dice {
     border: 5px solid lavender;
