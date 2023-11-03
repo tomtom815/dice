@@ -14,8 +14,8 @@ body {
     font-weight: bold;
 }
 .dice-number-container button {
-    width: 40px;
-    height: 40px;
+    width: 2em;
+    height: 2em;
     border-radius: 50%;
     color: #cb94e2;
     background: lavender;
@@ -26,7 +26,7 @@ body {
 .dice-container{
     display: flex;
     align-items: center;
-    height: 70vh;
+    height: 65vh;
     width: 75vw;
     justify-content: space-evenly;
     margin: auto;
