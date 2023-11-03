@@ -55,3 +55,6 @@ diceContainer.addEventListener("click", function (event) {
         rollDice();
     }
 });
+window.addEventListener("devicemotion", function(){
+    rollDice();
+});
