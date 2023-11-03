@@ -1,22 +1,57 @@
-var dice = document.querySelectorAll(".dice");
+var diceContainer = document.querySelector(".dice-container");
 var rollDiceButton = document.querySelector(".roll");
+var numberOfDice = document.querySelector(".number-of-dice");
+var minus = document.querySelector(".minus");
+var plus = document.querySelector(".plus");
 
 
-function getDotsNumber(){
+function getDotsNumber() {
     return Math.floor(Math.random() * 6) + 1;
 }
-function rollDice(){
-    for(var i = 0; i < dice.length; i++){
+
+function rollDice() {
+    var diceHtml = "";
+    var numDice = parseInt(numberOfDice.innerHTML);
+    for (var i = 0; i < numDice; i++) {
         var dotNumber = getDotsNumber();
         var dotHtml = `<div class="dot ${dotNumber}">&nbsp;</div>`.repeat(dotNumber);
-        dice[i].innerHTML = dotHtml;
+        diceHtml += `<div class="dice">${dotHtml}</div>`;
     }
+    diceContainer.innerHTML = diceHtml;
 }
-dice.forEach(function(dice){
-    dice.addEventListener("click", function(){
-        rollDice();
-    });
-});
-rollDiceButton.addEventListener("click", function(){
+
+function decreaseDice() {
+    var currentNumber = parseInt(numberOfDice.innerHTML);
+    if (currentNumber > 1) {
+        currentNumber--;
+        numberOfDice.innerHTML = currentNumber;
+    }
     rollDice();
-})
+}
+
+function increaseDice() {
+    var currentNumber = parseInt(numberOfDice.innerHTML);
+    if (currentNumber < 6) {
+        currentNumber++;
+        numberOfDice.innerHTML = currentNumber;
+    }
+    rollDice();
+}
+
+rollDiceButton.addEventListener("click", function () {
+    rollDice();
+});
+
+minus.addEventListener("click", function () {
+    decreaseDice();
+});
+
+plus.addEventListener("click", function () {
+    increaseDice();
+});
+
+diceContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("dice")) {
+        rollDice();
+    }
+});
