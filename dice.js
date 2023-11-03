@@ -55,6 +55,4 @@ diceContainer.addEventListener("click", function (event) {
         rollDice();
     }
 });
-window.addEventListener("shake", function(){
-    rollDice();
-});
+
