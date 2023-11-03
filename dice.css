@@ -5,6 +5,7 @@ body {
     width:100%;
     margin:auto;
     text-align:center;
+    padding-top: 50px;
 }
 .dice-number-container .number-of-dice {
     margin: 55px;
@@ -25,7 +26,7 @@ body {
 .dice-container{
     display: flex;
     align-items: center;
-    height: 75vh;
+    height: 70vh;
     width: 75vw;
     justify-content: space-evenly;
     margin: auto;
