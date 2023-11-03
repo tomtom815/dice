@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 75vw;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.dice {
+    border: 5px solid lavender;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    background: #cb94e2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background: #f7aad6;
+    margin: 6px;
+    border-radius: 50%;
+    position: relative;
+}
+.dot.\32:first-child,
+.dot.\33:first-child{
+    left: 25px;
+}
+.dot.\32:last-child,
+.dot.\33:last-child{
+    right:25px;
+}
+.dot.\34{
+    margin:15px;
+}
+.dot.\35:nth-child(1) {
+    
+}
+.dot.\35:nth-child(2) {
+    left: 25px;
+}
+.dot.\35:nth-child(3) {
+    
+}
+.dot.\35:nth-child(4) {
+    top: -14px;
+}
+.dot.\35:nth-child(5) {
+    top: 14px;
+}
