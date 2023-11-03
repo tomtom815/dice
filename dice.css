@@ -1,11 +1,13 @@
 body {
+    background: #7cf8f4;
+}
+.dice-container{
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 75vh;
     width: 75vw;
     justify-content: space-evenly;
     margin: auto;
-    background: #7cf8f4;
 }
 .dice {
     border: 5px solid lavender;
@@ -27,6 +29,19 @@ body {
     margin: 6px;
     border-radius: 50%;
     position: relative;
+}
+.roll{
+    border: 5px solid #cb94e2;
+    text-align: center;
+    width: 200px;
+    background: lavender;
+    color: #cb94e2;
+    border-radius: 10px;
+    font-weight: bold;
+    line-height: 2em;
+}
+.button-container{
+    text-align:center;
 }
 .dot.\32:first-child,
 .dot.\33:first-child{

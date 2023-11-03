@@ -1,4 +1,5 @@
 var dice = document.querySelectorAll(".dice");
+var rollDiceButton = document.querySelector(".roll");
 
 
 function getDotsNumber(){
@@ -16,3 +17,6 @@ dice.forEach(function(dice){
         rollDice();
     });
 });
+rollDiceButton.addEventListener("click", function(){
+    rollDice();
+})
