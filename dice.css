@@ -39,6 +39,7 @@ body {
     border-radius: 10px;
     font-weight: bold;
     line-height: 2em;
+    font-size: 1.25em;
 }
 .button-container{
     text-align:center;
