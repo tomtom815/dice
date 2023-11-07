@@ -10,15 +10,41 @@ function getDotsNumber() {
 }
 
 function rollDice() {
-    var diceHtml = "";
     var numDice = parseInt(numberOfDice.innerHTML);
+    var rolls = 7; // Number of rolls before landing on the final number
+    var currentRoll = 0;
+
+    var interval = setInterval(function() {
+        if (currentRoll >= rolls) {
+            clearInterval(interval);
+            updateDiceWithFinalNumber(numDice);
+        } else {
+            updateDiceWithRandomNumbers(numDice);
+            currentRoll++;
+        }
+    }, 150); // Adjust the interval duration as needed
+}
+
+function updateDiceWithRandomNumbers(numDice) {
+    var diceHtml = "";
     for (var i = 0; i < numDice; i++) {
-        var dotNumber = getDotsNumber();
+        var dotNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
         var dotHtml = `<div class="dot ${dotNumber}">&nbsp;</div>`.repeat(dotNumber);
         diceHtml += `<div class="dice">${dotHtml}</div>`;
     }
     diceContainer.innerHTML = diceHtml;
 }
+
+function updateDiceWithFinalNumber(numDice) {
+    var diceHtml = "";
+    for (var i = 0; i < numDice; i++) {
+        var dotNumber = getDotsNumber(); // Your original logic for getting the final number
+        var dotHtml = `<div class="dot ${dotNumber}">&nbsp;</div>`.repeat(dotNumber);
+        diceHtml += `<div class="dice">${dotHtml}</div>`;
+    }
+    diceContainer.innerHTML = diceHtml;
+}
+
 
 function decreaseDice() {
     var currentNumber = parseInt(numberOfDice.innerHTML);
